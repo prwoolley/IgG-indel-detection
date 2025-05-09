@@ -1,0 +1,11 @@
+name: indel
+channels:
+  - conda-forge
+  - defaults
+  - bioconda
+dependencies:
+  - python=3.9
+  - biopython
+  - mmseqs2
+  - scipy
+  - pandas
