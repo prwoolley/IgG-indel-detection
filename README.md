@@ -4,6 +4,7 @@ Indel detection software designed to be used on MiXCR outputs
 Inputs are two files: Assembled-annotation and Proteomic-database
 
 The pipeline is outlined as follows:
+
 0. Creates directories output/fastas, output/mmseqs, output/igblast, where "output" is a user defined directory.
 1. Pull cluster rep sequences from Proteomic-database and write to FASTA file.
 2. Pull sequences from Assembled-annotation and write to FASTA file.
