@@ -108,6 +108,12 @@ ${IGBLAST_PATH}/bin/igblastn \
     -auxiliary_data ${IGBLAST_PATH}/optional_file/human_gl.aux \
     -query ${FASTA_IN}} \
     -outfmt 19 \
-    -out $OUTPUT_DIR/igblast/${FASTA_IN%.fasta}_igblast.tsv
+    -out $OUTPUT_DIR/igblast/${FASTA_IN%.fasta}_igblast.tsv \
+    -in ${OUTPUT_DIR}/fastas/${QUERY}_filtered.fasta # CHECK THIS
 
-python3 insertion_finder.py \
+# CHECK HOW THIS IS RUN
+python3 insertion_finder_indel_v1.py \
+    --igblast_tsv $OUTPUT_DIR/igblast/${FASTA_IN%.fasta}_igblast.tsv
+    #--cluster_stats $OUTPUT_DIR/cluster_stats.csv \
+    #--matches $OUTPUT_DIR/matches.m8 \
+    #--vh_assembled_annotation ${OUTPUT_DIR}/fastas/${QUERY}_filtered.fasta
